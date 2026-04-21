@@ -1,0 +1,5 @@
+streamlit
+requests
+qrcode
+dotenv
+streamlit-option-menu
