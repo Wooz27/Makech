@@ -1,5 +1,6 @@
 streamlit
 requests
-qrcode
-dotenv
+qrcode[pil]
+python-dotenv
 streamlit-option-menu
+pandas

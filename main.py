@@ -8,7 +8,7 @@ from components.sidebar import sidebar
 def main():
     st.set_page_config(
         page_title="Reservas Makech",
-        page_icon="📅",
+        page_icon="assets/favicon.ico",
         layout="centered",
         initial_sidebar_state="auto",
     )

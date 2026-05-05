@@ -1,0 +1,23 @@
+services:
+  maketch:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: maketch_app
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - N8N_WEBHOOK_URL_GET=${N8N_WEBHOOK_URL_GET}
+      - N8N_WEBHOOK_URL_POST=${N8N_WEBHOOK_URL_POST}
+      - N8N_TOKEN=${N8N_TOKEN}
+    volumes:
+      - ./assets:/app/assets:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
