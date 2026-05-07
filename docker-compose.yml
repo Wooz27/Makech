@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     # Puerto solo accesible desde localhost (cloudflared lo alcanza internamente)
     ports:
-      - "0.0.0.0:8501:8501"
+      - "127.0.0.1:8501:8501"
     env_file:
       - .env
     environment:
