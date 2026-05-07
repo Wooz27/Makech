@@ -7,8 +7,6 @@ services:
     # Puerto solo accesible desde localhost (cloudflared lo alcanza internamente)
     ports:
       - "127.0.0.1:8501:8501"
-    env_file:
-      - .env
     environment:
       - N8N_WEBHOOK_URL_GET=${N8N_WEBHOOK_URL_GET}
       - N8N_WEBHOOK_URL_POST=${N8N_WEBHOOK_URL_POST}
