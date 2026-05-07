@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 from utils.helpers import reservas_fragment
 from components.form import register_form
 from components.sidebar import sidebar
+from components.qr_gallery import qr_gallery
 
 #main
 def main():
@@ -20,15 +21,17 @@ def main():
     st.markdown("""
 <style>
 header[data-testid="stHeader"] img {
-    height: 120px !important;
-    max-height: 100px !important;
+    height: 150px !important;
+    max-height: 150px !important;
     width: auto !important;
+    margin-top: 50px !important;
 }
 
 section[data-testid="stSidebar"] img {
-    height: 120px !important;
-    max-height: 100px !important;
+    height: 150px !important;
+    max-height: 150px !important;
     width: auto !important;
+    margin-top: 50px !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -36,8 +39,8 @@ section[data-testid="stSidebar"] img {
 
     vista = option_menu(
         menu_title=None,
-        options=["Registrar reserva", "Ver reservas"],
-        icons=["pencil", "table"],
+        options=["Registrar reserva", "Ver reservas", "Ver QRs"],
+        icons=["pencil", "table", "qr-code"],
         default_index=0,
         orientation="horizontal",
         key="vista_menu"
@@ -48,6 +51,8 @@ section[data-testid="stSidebar"] img {
         register_form()
     elif vista == "Ver reservas":
         reservas_fragment()
+    elif vista == "Ver QRs":
+        qr_gallery()
 
 
 
