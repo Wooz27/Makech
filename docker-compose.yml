@@ -13,6 +13,7 @@ services:
       - N8N_WEBHOOK_URL_GET=${N8N_WEBHOOK_URL_GET}
       - N8N_WEBHOOK_URL_POST=${N8N_WEBHOOK_URL_POST}
       - N8N_TOKEN=${N8N_TOKEN}
+      
     volumes:
       - ./assets:/app/assets:ro
     networks:

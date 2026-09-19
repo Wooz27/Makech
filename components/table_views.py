@@ -62,7 +62,8 @@ def table_view_semana(df=None):
                        (nuevo_df["fecha"].dt.year == anio_actual)
                        ]
         
-        df_filtrado = df_semana[df_super_compact]
+        df_filtrado = df_semana[df_super_compact].copy()
+        df_filtrado["fecha"] = df_filtrado["fecha"].dt.strftime("%Y-%m-%d")
         if df_filtrado.empty:
             st.warning("No hay reservas para esta semana.")
         else:
