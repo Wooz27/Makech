@@ -4,6 +4,7 @@ from utils.helpers import reservas_fragment
 from components.form import register_form
 from components.sidebar import sidebar
 from components.qr_gallery import qr_gallery
+from components.evo_conect import conectar
 
 #main
 def main():
@@ -39,8 +40,8 @@ section[data-testid="stSidebar"] img {
 
     vista = option_menu(
         menu_title=None,
-        options=["Registrar reserva", "Ver reservas", "Ver QRs"],
-        icons=["pencil", "table", "qr-code"],
+        options=["Registrar reserva", "Ver reservas", "Ver QRs", "Whatsapp"],
+        icons=["pencil", "table", "qr-code","whatsapp"],
         default_index=0,
         orientation="horizontal",
         key="vista_menu"
@@ -53,6 +54,8 @@ section[data-testid="stSidebar"] img {
         reservas_fragment()
     elif vista == "Ver QRs":
         qr_gallery()
+    elif vista == "Whatsapp":
+        conectar()
 
 
 
