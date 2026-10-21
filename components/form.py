@@ -44,6 +44,8 @@ def register_form():
         errors = []
 
         if submit:
+            phone = "".join(phone.split())
+
             if not name:
                 errors.append("El nombre del cliente es requerido.")
             if not table:
